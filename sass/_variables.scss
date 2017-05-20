@@ -1,0 +1,80 @@
+/* VARIABLES
+------------------------------------------------------------------*/
+$main-font-size: 16px;
+$main-font-size-mobile: 14px;
+$main-font-size-em: 1em;
+$main-font-size-index: 1.333;
+$main-font-weight: 300;
+$main-font-color: #444;
+$main-light-font-color: #fff;
+$main-font-family: 'Roboto', sans-serif;
+
+$link-color: #373737;
+$light-link-color: #fff;
+$link-color-active: #a0a0a0;
+
+$section-sm-top-padding: 120px;
+$section-sm-opacity: 0;
+$section-xs-top-padding: 30px;
+$section-xs-opacity: 0;
+
+$media-sm: 991px;
+$media-xs: 767px;
+
+/* HELPER MIXINS
+------------------------------------------------------------------*/
+@function exponent($base, $exponent) {
+  // reset value
+  $value: $base;
+  // positive intergers get multiplied
+  @if $exponent > 1 {
+    @for $i from 2 through $exponent {
+      $value: $value * $base; } }
+  // negitive intergers get divided. A number divided by itself is 1
+  @if $exponent < 1 {
+    @for $i from 0 through -$exponent {
+      $value: $value / $base; } }
+  // return the last value written
+  @return $value;
+}
+
+@function pow($base, $exponent) {
+  @return exponent($base, $exponent);
+}
+
+@mixin respond-to($media) {
+    @if $media == handhelds {
+        @media only screen and (max-width: 479px) { @content; }
+    }
+    @else if $media == mobile {
+        @media only screen and (max-width: 767px) { @content; }
+    }
+    @else if $media == tablet {
+        @media only screen and (max-width: 1169px) { @content; }
+    }
+    @else if $media == desctopt {
+        @media only screen and (min-width: 1170px) { @content; }
+    }
+}
+
+@mixin transform ($args...) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin animation ($args...) {
+  -moz-animation: $args;
+  -webkit-animation: $args;
+  animation: $args;
+}

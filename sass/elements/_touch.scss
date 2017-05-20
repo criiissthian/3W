@@ -1,0 +1,68 @@
+.touch {
+	.port-item a span {
+		opacity: 1;
+	}
+	.open-item {
+		.open-item-nav {
+			display: inline-block;
+			width: 100%;
+			margin-bottom: -6px;
+			line-height: 50px;
+
+			.prev-item {
+				float: left;
+				margin-left: 85px;
+
+				&:before {
+					content: "<";
+					padding-right: 7px;
+				}
+				@include respond-to(mobile) {
+					margin-left: 15px;
+				}
+			}
+			.next-item {
+				float: right;
+				margin-right: 85px;
+
+				&:after {
+					content: ">";
+					padding-left: 7px;
+				}
+				@include respond-to(mobile) {
+					margin-right: 15px;
+				}
+			}
+			.prev-item,
+			.next-item {
+				font-size: 0.714em;
+				letter-spacing: .05em;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+			@include respond-to(mobile) {
+				line-height: 40px;
+			}
+		}
+		button.close {
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 14px;
+			height: 53px;
+
+			&:after,
+			&:before {
+				@include respond-to(tablet) {
+					width: 14px;
+				}
+			}
+
+			@include respond-to(mobile) {
+				height: 43px;
+			}
+		}
+	}
+}

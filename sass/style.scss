@@ -1,0 +1,22 @@
+/*
+Theme Name: Magic7
+Theme URI: http://template.magic7.itembridge.com/
+Author: InfoStyle
+Author URI: http://themeforest.net/user/InfoStyle
+Description: Magic7 responsive theme
+Version: 1.0.0
+License: ThemeForest Regular & Extended License
+License URI: http://themeforest.net/licenses/regular-extended
+*/
+
+@import "compass/css3";
+
+@import "variables";
+
+@import "typography/typography";
+
+@import "elements/sections-style";
+@import "elements/navigation";
+@import "elements/elements";
+@import "elements/main";
+@import "elements/touch";
